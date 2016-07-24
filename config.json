@@ -1,17 +1,21 @@
 {
-	"port":         8001,
-	"source_port":  8002,
-  "api_port":     8003,
-	"log": {
-		"stdout":     true
+  "port": 8001,
+  "source_port": 8002,
+  "api_port": 8003,
+  "rewind_dump": {
+    "dir": "/cache",
+    "frequency": 60
+  },
+  "log": {
+    "stdout": true
   },
   "streams": {
     "triplejet": {
-      "root_route":       false,
-      "format":           "aac",
-      "seconds":          72000,
-      "metaTitle":        "Triple J ET",
-      "host":             "localhost",
+      "root_route": false,
+      "format": "aac",
+      "seconds": 72000,
+      "metaTitle": "Triple J ET",
+      "host": "localhost",
       "fallback": "http://live-radio01.mediahubaustralia.com/2TJW/aac/"
     }
   }

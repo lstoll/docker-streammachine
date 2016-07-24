@@ -5,8 +5,10 @@ RUN apt-get install -y git python build-essential
 
 RUN git clone https://github.com/StreamMachine/StreamMachine
 RUN cd StreamMachine && npm install
-ADD config.json .
+ADD config.json /config/
 
 EXPOSE 8001
+VOLUME /cache
+VOLUME /config
 
-CMD StreamMachine/streammachine-cmd --config config.json
+CMD StreamMachine/streammachine-cmd --config /config/config.json
